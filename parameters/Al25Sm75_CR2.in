@@ -1,0 +1,14 @@
+# An example parameter file for HRMC
+models/Sm75Al25_779atoms_start.xyz           # Model file
+data/AlSm_CR_data2_half.txt                  # Experimental data file
+0.0305                                       # Q (inverse angstrom) = 0.61 / R
+1 40 20                                      # number of rotations(nphi, npsi, ntheta), use 1 40 20
+49.85102808                                  # thickness scaling factor = 3 texp/tsim
+potentials/reformatted/AlSm.lammps.eam       # Potential file with EAM/alloy or EAM/FS format
+0 4000000                                    # starting step, ending step
+300.0 1.5 50000                              # starting temp (assuming s=0), starting max_move, how often we decrement both
+10475                                        # seed
+0.0256                                       # weighting factor between E and chi2
+2                                            # number of atomic species
+2.5 2.5                                      # hard sphere cutoff distances
+2.5 2.5
