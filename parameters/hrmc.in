@@ -9,7 +9,6 @@ potentials/reformatted/NiP.lammps.eam        # Potential file with EAM/alloy or 
 300.0 1.5 50000                              # starting temp (assuming s=0), starting max_move, how often we decrement both
 10475                                        # seed
 0.0256                                       # weighting factor between E and chi2
-3                                            # number of atomic species
-2.040 2.040 2.040
-2.040 2.040 2.040                            # hard sphere cutoff distances
-2.040 2.040 2.040
+2                                            # number of atomic species
+2.040 2.040                                  # hard sphere cutoff distances
+2.040 2.040
