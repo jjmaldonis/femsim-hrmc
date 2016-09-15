@@ -1,18 +1,16 @@
 #!/bin/sh
 
-#SBATCH --job-name=hrmc                  # job name
-#SBATCH --partition=univ                # default "univ" if not specified
+#SBATCH --job-name=NiP_t1                  # job name
+#SBATCH --partition=normal                # default "univ" if not specified
 #SBATCH --error=job.%J.err              # error file
 #SBATCH --output=job.%J.out             # output file
 
-#SBATCH --time=7-00:00:00               # run time in days-hh:mm:ss
+#SBATCH --time=2-00:00:00               # run time in days-hh:mm:ss
 
-#SBATCH --nodes=4                      # number of nodes requested (n)
-#SBATCH --ntasks=64                    # required number of CPUs (n)
+#SBATCH --nodes=7                      # number of nodes requested (n)
+#SBATCH --ntasks=112                    # required number of CPUs (n)
 #SBATCH --ntasks-per-node=16             # default 16 (Set to 1 for OMP)
 #SBATCH --cpus-per-task=1              # default 1 (Set to 16 for OMP)
-##SBATCH --mem=16384                    # total RAM in MB, max 64GB  per node
-##SBATCH --mem-per-cpu=4000              # RAM in MB (default 4GB, max 8GB)
 
 ##SBATCH --export=ALL
 

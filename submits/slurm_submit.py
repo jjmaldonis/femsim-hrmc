@@ -25,12 +25,12 @@ def submit_job(paramfile, prev_jobid, s, es):
 
     # Do the submitting
     if(prev_jobid == None):
-        args = "sbatch submits/stampede_submit.sh {0}".format(paramfile)
+        args = "sbatch submits/slurm.sh {0}".format(paramfile)
     else:
         # Call sed to change modelfile based on previous job id
         args = "sed -i '2s/.*/model_final_{0}.xyz/' {1}".format(prev_jobid,paramfile)
         pcomm = run_subproc(args)
-        args = "sbatch --dependency=afterok:{0} submits/stampede_submit.sh {1}".format(prev_jobid,paramfile)
+        args = "sbatch --dependency=afterok:{0} submits/slurm.sh {1}".format(prev_jobid,paramfile)
     pcomm = run_subproc(args)
     jobid = int(pcomm[0].strip().split('\n').pop().split()[-1])
     return jobid
@@ -40,7 +40,7 @@ def main():
     ts = 4000000 # total number of steps in the simulation
     js = 2000000 # number of steps per job
     ss = 0 # starting step, this number gets changed in the loop ~ incremented by js on each submit
-    starting_param_filename = 'paramters/hrmc.in' # It is expected that the starting parameters in here are correct
+    starting_param_filename = 'parameters/hrmc.in' # It is expected that the starting parameters in here are correct
 
     for s in range(ss, ts, js):
         if(s > ss):

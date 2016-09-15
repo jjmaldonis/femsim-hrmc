@@ -9,7 +9,7 @@ for i in `seq 0 9`;
 do
     echo r$i
     cd r$i
-    python submits/stampede_submit.py
+    python submits/slurm_submit.py
     cd ..
 done
 

@@ -1,5 +1,5 @@
 # An example parameter file for HRMC
-models/Ni80P20_start.xyz                     # Model file
+models/Ni80P20_1586atoms_hrmc_start.xyz      # Model file
 data/Ni80P20_data_t1_half.txt                # Experimental data file
 0.0305                                       # Q (inverse angstrom) = 0.61 / R
 1 40 20                                      # number of rotations(nphi, npsi, ntheta), use 1 40 20
