@@ -13,13 +13,13 @@ contains
         integer, intent(out) :: step_start, step_end, temp_move_decrement
         real, intent(out) :: temperature
         real, intent(out) :: max_move
-        real, intent(out), dimension(:,:), allocatable :: cutoff_r
+        double precision, intent(out), dimension(:,:), allocatable :: cutoff_r
         integer, intent(out) :: iseed2
-        real, intent(out) :: alpha
+        double precision, intent(out) :: alpha
         double precision, pointer, dimension(:) :: k, v, v_err
         integer, intent(out) :: ntheta, nphi, npsi
-        real, intent(out) :: q
-        real, intent(out) :: scale_fac
+        double precision, intent(out) :: q
+        double precision, intent(out) :: scale_fac
 
         ! Local variables
         character (len=256) :: comment
@@ -140,7 +140,7 @@ contains
                   ichar(str(i:i)) .eq. 45 .or. \
                   ichar(str(i:i)) .eq. 69 .or. \
                   ichar(str(i:i)) .eq. 101 \
-               ) then ! we have a number or a .
+                ) then ! we have a number, a period, a negative sign, or a E or e for exponential format
                 if(sep) nums = nums + 1
                 sep = .false.
             else
